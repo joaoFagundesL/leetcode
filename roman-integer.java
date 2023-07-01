@@ -37,6 +37,7 @@ class Solution {
                 }
             }
 
+            /* The last one i can just add to the sum because there wont any element after it */
             else 
                 sum += firstValue;
         }
