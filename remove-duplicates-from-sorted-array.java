@@ -1,7 +1,7 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
 
-        /* It's like a pointer for the unique elements. I set as 0 because the element at
+        /* It's like a pointer for the unique elements. I set as 1 because the element at
         the index 0 will be unique */
 
         /* [0, 1, 1, 1, 2] 
