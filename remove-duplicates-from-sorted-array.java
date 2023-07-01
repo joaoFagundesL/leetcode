@@ -16,8 +16,8 @@ class Solution {
 
         int unique = 1;
 
-        /* With -1 i assure that wont invalid access, cuz im going until that last but one
-        Other possible solution would be compare with its antecesor. i = 1 and nums[i] != nums[i - 1] */
+        /* With -1 i assure that wont be invalid access, cuz im going until that last but one
+        another possible solution would be to compare with its predecessor. i = 1 and nums[i] != nums[i - 1] */
         for(int i = 0; i < nums.length - 1; i++) {
             if(nums[i] != nums[i + 1]) {
                 nums[unique] = nums[i + 1];
