@@ -29,7 +29,7 @@ class Solution {
                 else {
                     sum += (secondValue - firstValue);
                     
-                    /* Let's say for example I have "XIV", what i do is compare I < V. If is true,
+                    /* Let's say for example I have "XIV", what i do is compare I < V. If it is true,
                     then I make V - I. However the next loop there's no need to sum the V again,
                     that's why i make i++. In another words, im jumping the V.
                     */
