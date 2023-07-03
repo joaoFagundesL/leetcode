@@ -9,3 +9,7 @@
  If all nodes of my stack are removed then I have to set the "red min" to INT_MAX because the current value is 3, so I have to reset it
 
 <a href="https://ibb.co/5vPtQhq"><img src="https://i.ibb.co/DkZsBf3/image.png" alt="image" border="0" /></a>
+
+## Setting the node->min
+
+<a href="https://ibb.co/my91M6j"><img src="https://i.ibb.co/2Mvmfg9/image.png" alt="image" border="0" /></a>
