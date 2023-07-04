@@ -1,2 +1,2 @@
 ## Solution
-<a href="https://ibb.co/zNxTG6Y"><img src="https://i.ibb.co/mSTV6Nw/image.png" alt="image" border="0" /></a>
+<a href="https://ibb.co/LvXNJSc"><img src="https://i.ibb.co/kMsm9Kw/image.png" alt="image" border="0" /></a>
