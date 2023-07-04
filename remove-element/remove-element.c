@@ -37,7 +37,7 @@ int removeElement(int* nums, int numsSize, int val) {
 
 /*
 
-Another solution (similar to the one who remove duplicates from sorted array
+Another solution (similar to the one that removes duplicates from sorted array
 
 int removeElement(int* nums, int numsSize, int val) {
 
