@@ -23,11 +23,8 @@ int myLinkedListGet(MyLinkedList * obj, int index) {
         return -1;
     
     Node *curr = obj->head;
-    while(index != 0) {
-        curr = curr->next;
-        index--;
-    }
-
+    for(; index --> 0; curr = curr->next);
+   
     return curr->val;
 }
 
@@ -47,9 +44,7 @@ void myLinkedListAddAtTail(MyLinkedList * obj, int val) {
   }
 
   Node * last = obj->head;
-
-  while (last->next != NULL)
-    last = last->next;
+  for(; last->next != NULL; last = last->next);
 
   Node * node = (Node * ) malloc(sizeof(Node));
   assert(node != NULL);
@@ -63,11 +58,7 @@ void myLinkedListInsertMiddle(MyLinkedList *obj, int index, int val) {
   Node *curr = obj->head;
   Node *prev;
 
-  while (index != 0) {
-    index--;
-    prev = curr;
-    curr = curr->next;
-  }
+  for(; index --> 0; prev = curr, curr = curr->next);
 
   Node * node = (Node * ) malloc(sizeof(Node));
   assert(node != NULL);
@@ -118,11 +109,8 @@ void myLinkedListDeleteAtTail(MyLinkedList *obj) {
     Node *curr = obj->head;
     Node *prev;
 
-    while(curr->next != NULL) {
-      prev = curr;
-      curr = curr->next;
-    }
-
+    for(; curr->next != NULL; prev = curr, curr = curr->next);
+  
     prev->next = NULL;
     free(curr);
     obj->len--;
@@ -133,12 +121,7 @@ void myLinkedListDeleteMiddle(MyLinkedList *obj, int index) {
       return;
     
     Node *curr = obj->head, *prev;
-
-    while(index != 0) {
-        index--;
-        prev = curr;
-        curr = curr->next;
-    }
+    for(; index --> 0; prev = curr, curr = curr->next);
 
     prev->next = curr->next;
     curr->next = NULL;
