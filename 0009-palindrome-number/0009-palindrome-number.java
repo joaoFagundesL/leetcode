@@ -10,13 +10,6 @@ class Solution {
             aux = aux / 10; 
         }
                 
-        while (x != 0) {
-            x /= 10; rev /= 10;
-            
-            if (x != rev)
-                return false;
-        }
-        
-        return true;
-    }
+        return rev == x;
+            }
 }
