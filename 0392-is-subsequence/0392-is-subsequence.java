@@ -10,15 +10,12 @@ class Solution {
             char t_char = t.charAt(i); 
             char s_char = s.charAt(k);
             
-            if (t_char == s_char) {
-                System.out.println("t_char = " + t_char + " s_char = " + s_char);
+            if (t_char == s_char) 
                 ++k;
-            }
             
             if (k >= len_s) return true;
-                
-            
         }
+        
         return false;
         
     }
