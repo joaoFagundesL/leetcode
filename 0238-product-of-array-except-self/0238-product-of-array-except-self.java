@@ -8,7 +8,7 @@ class Solution {
         ans[i + 1] = aux; 
       }  
       
-      len = len - 1; aux = 1;
+      --len; aux = 1;
       
       // right
       for (int i = len; i >= 1; i--) {
@@ -17,6 +17,5 @@ class Solution {
       }
       
       return ans;
-      
     }
 }
