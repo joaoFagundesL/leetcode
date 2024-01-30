@@ -33,8 +33,10 @@ public class Solution {
         final int CHARACTER_QUANTITY = 26;
 
         int[] arr_char = new int[CHARACTER_QUANTITY];
+      
+        int len = str.length();
 
-        for (int i = 0; i < str.length(); i++) {
+        for (int i = 0; i < len; i++) {
             arr_char[str.charAt(i) - 'a'] += 1;
         }
 
