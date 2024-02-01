@@ -11,7 +11,7 @@ struct TreeNode **searchNode(struct TreeNode **root, int key) {
     return NULL;
 }
 
-struct TreeNode **highestRightSubtree(struct TreeNode **root) {
+struct TreeNode **minRightSubtree(struct TreeNode **root) {
     struct TreeNode **parent = root;
     while((*parent)->left != NULL)
         parent = &((*parent)->left);
@@ -34,7 +34,7 @@ void deleteNodeHelper(struct TreeNode** parent, int key){
         return;
     }
    
-    struct TreeNode **minRight = highestRightSubtree(&(*parent)->right);
+    struct TreeNode **minRight = minRightSubtree(&(*parent)->right);
     (*parent)->val = (*minRight)->val;
     deleteNodeHelper(minRight, (*minRight)->val);
 }
