@@ -9,14 +9,14 @@ class Solution {
       boolean[][] visited = new boolean[numRows][numCols];
     
       
-      Queue<String> queue = new LinkedList<>();
-      queue.add(sr + "," + sc);
+      Queue<int[]> queue = new LinkedList<>();
+      queue.add(new int[]{sr, sc});
       
       while(!queue.isEmpty()) {
-        String x = queue.remove();
+        int[] curr = queue.remove();
         
-        int row = Integer.parseInt(x.split(",")[0]);
-        int col = Integer.parseInt(x.split(",")[1]);
+        int row = curr[0];
+        int col = curr[1];
         
         if (row < 0 || col < 0 || row >= numRows || col >= numCols || 
             visited[row][col] || image[row][col] != color_start) {
@@ -25,10 +25,12 @@ class Solution {
         
         image[row][col] = color;
         visited[row][col] = true;
-        queue.add(row + "," + (col - 1)); //left
-        queue.add(row + "," + (col + 1)); //right
-        queue.add((row - 1) + "," + col); //up
-        queue.add((row + 1) + "," + col); //down          
+        
+        for (int[] direction : directions) {
+          int newRow = row + direction[0];
+          int newCol = col + direction[1];
+          queue.add(new int[]{newRow, newCol});
+        }
       }
       
       return image;
