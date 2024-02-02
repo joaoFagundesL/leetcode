@@ -5,13 +5,15 @@ class Solution {
       if (numRows == 0)
         return image;
       
+      // {x, y} => {row, col} => {move left} {move right} {move up} {move down}
       int[][] directions = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
       boolean[][] visited = new boolean[numRows][numCols];
     
-      
       Queue<int[]> queue = new LinkedList<>();
-      queue.add(new int[]{sr, sc});
       
+      // add the starting point to initiate the BFS
+      queue.add(new int[]{sr, sc});
+    
       while(!queue.isEmpty()) {
         int[] curr = queue.remove();
         
