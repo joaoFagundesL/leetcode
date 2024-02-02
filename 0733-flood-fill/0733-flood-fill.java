@@ -13,25 +13,27 @@ class Solution {
       
       // add the starting point to initiate the BFS
       queue.add(new int[]{sr, sc});
+      visited[sr][sc] = true;
+      image[sr][sc] = color; 
     
       while(!queue.isEmpty()) {
         int[] curr = queue.remove();
         
         int row = curr[0];
         int col = curr[1];
-        
-        if (row < 0 || col < 0 || row >= numRows || col >= numCols || 
-            visited[row][col] || image[row][col] != color_start) {
-          continue;
-        }
-        
-        image[row][col] = color;
-        visited[row][col] = true;
-        
+         
         // add all neighbors in the queue
         for (int[] direction : directions) {
           int newRow = row + direction[0]; // => {-1, 0}, {1, 0}
           int newCol = col + direction[1]; // => {0, -1}, {0, 1}
+                   
+          if (newRow < 0 || newCol < 0 || newRow >= numRows || newCol >= numCols || 
+              visited[newRow][newCol] || image[newRow][newCol] != color_start) {
+            continue;
+          }
+
+          image[newRow][newCol] = color;
+          visited[newRow][newCol] = true;
           queue.add(new int[]{newRow, newCol});
         }
       }
