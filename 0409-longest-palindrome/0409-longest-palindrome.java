@@ -19,8 +19,6 @@ class Solution {
         for (Map.Entry<Character, Integer> entry : hash.entrySet()) {
             int val = entry.getValue();
             
-            System.out.println(val);
-            
             if (val % 2 == 0)
                 ans += val;
             else {
