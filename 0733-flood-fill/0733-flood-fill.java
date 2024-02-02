@@ -28,9 +28,10 @@ class Solution {
         image[row][col] = color;
         visited[row][col] = true;
         
+        // add all neighbors in the queue
         for (int[] direction : directions) {
-          int newRow = row + direction[0];
-          int newCol = col + direction[1];
+          int newRow = row + direction[0]; // => {-1, 0}, {1, 0}
+          int newCol = col + direction[1]; // => {0, -1}, {0, 1}
           queue.add(new int[]{newRow, newCol});
         }
       }
