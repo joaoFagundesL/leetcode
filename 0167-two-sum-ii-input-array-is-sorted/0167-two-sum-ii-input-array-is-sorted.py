@@ -2,7 +2,7 @@ class Solution(object):
     def twoSum(self, numbers, target):
         x, y = 0, len(numbers) - 1
         
-        while (x != y):
+        while x != y:
             total = numbers[x] + numbers[y]
             
             if total < target:
