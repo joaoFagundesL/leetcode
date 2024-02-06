@@ -8,7 +8,8 @@ class Solution:
             time = (target - p)/s # it needs to be float
             if time <= highest_time:
                 removed += 1
-            highest_time = max(highest_time,time)
+            else:
+                highest_time = time
              
         return len(arr)-removed
         
