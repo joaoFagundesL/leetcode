@@ -6,6 +6,7 @@ class Solution:
         
         for p, s in arr:
             time = (target - p) / s # it needs to be float
+            
             if curr < time:
                 ans += 1
                 curr = time
