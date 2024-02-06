@@ -1,12 +1,14 @@
 class Solution:
     def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
-        ans, stack, = 1, []
+        highest_speed, removed = -1, 0
         arr = [(position[i], speed[i]) for i in range(len(position))]
         arr.sort(reverse=True)
-        
+        print(len(arr))
         for p, s in arr:
-            stack.append((target - p) / s) # it needs to be float
-            if len(stack) >= 2 and stack[-1] <= stack[-2]: # -1 is the top of the stack
-                stack.pop()
-        return len(stack)
+            time = (target - p)/s # it needs to be float
+            if time <= highest_speed:
+                removed += 1
+            highest_speed = max(highest_speed,time)
+             
+        return len(arr)-removed
         
