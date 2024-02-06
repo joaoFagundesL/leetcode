@@ -11,7 +11,5 @@ class Solution:
         for idx in range(s1_len, s2_len):
             hash_map_s2[s2[idx]] += 1 
             hash_map_s2[s2[idx - s1_len]] -= 1
-            
             if hash_map_s2 == hash_map_s1: return True
-        
         return False
