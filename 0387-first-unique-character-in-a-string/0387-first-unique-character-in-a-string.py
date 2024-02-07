@@ -1,17 +1,14 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
-        my_hash, len_s = {}, len(s)
+        arr, len_s = [0] * 26, len(s)
         
-        for idx, char in enumerate(s):
-            if char not in my_hash:
-                my_hash[char] = [idx, 1]
-            else:
-                my_hash[char][1] += 1
-        
-        for char, arr in my_hash.items():
-            if arr[1] == 1:
-                return arr[0]
-        
+        for idx in range(len_s): 
+            arr[ord(s[idx]) - ord('a')] += 1 # counting the frequency of each char in the corresponding position
+            
+        # get from the array the value of the first letter (it's not the first position of the array, hence the ascii calc)    
+        for idx in range(len_s):
+            if arr[ord(s[idx]) - ord('a')] == 1: 
+                return idx
         return -1
             
             
