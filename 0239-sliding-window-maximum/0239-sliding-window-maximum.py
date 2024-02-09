@@ -5,8 +5,8 @@ class Solution:
         for idx in range(k):
             heappush(max_heap, -1 * nums[idx])
             
-        removed, max_height = {}, max_heap[0] * -1
-        ans.append(max_height)
+        removed = {}
+        ans.append(max_heap[0] * -1)
         
         for idx in range(k, nums_size):
             heappush(max_heap, -1 * nums[idx])
