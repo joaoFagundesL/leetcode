@@ -1,20 +1,18 @@
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
-        nums_size, ans, max_heap = len(nums), [], []
+        deq, ans, nums_size = collections.deque(), [], len(nums)
         
-        for idx in range(k):
-            heappush(max_heap, -nums[idx])
+        for idx in range(nums_size):
+            # out of range for the current window
+            while deq and deq[0] <= (idx - k):
+                deq.popleft()
+            # popping lesser values
+            while deq and nums[deq[-1]] < nums[idx]:
+                deq.pop()    
+            deq.append(idx)
             
-        removed = {}
-        ans.append(-max_heap[0])
-        
-        for idx in range(k, nums_size):
-            heappush(max_heap, -1 * nums[idx])
-            removed[nums[idx - k]] = removed.get(nums[idx - k], 0) + 1
-            while -max_heap[0] in removed and removed[-max_heap[0]] > 0:
-                removed[-max_heap[0]] -= 1
-                heappop(max_heap)
-            ans.append(-max_heap[0])
-            
-        return ans;
+            if idx >= k - 1:
+                ans.append(nums[deq[0]])
+        return ans
+                
             
