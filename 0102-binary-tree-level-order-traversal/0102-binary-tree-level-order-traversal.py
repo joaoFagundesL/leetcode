@@ -21,10 +21,7 @@ class Solution:
                     deq.append(node.left)
                 if node.right:
                     deq.append(node.right)
-                if level in my_hash:
-                    my_hash[level].append(node.val)
-                if level not in my_hash:
-                    my_hash[level] = [node.val]
+                my_hash[level] = my_hash.get(level, []) + [node.val]
             level += 1
         
         return list(my_hash.values())
