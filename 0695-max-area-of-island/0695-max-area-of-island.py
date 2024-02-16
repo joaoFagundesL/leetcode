@@ -12,7 +12,6 @@ class Solution:
         self.num_col = len(grid[0])
         
         max_area = 0
-        island_area = 0
         for r in range(self.num_row):
             for c in range(self.num_col):
                 if grid[r][c] == 1 and (r, c) not in self.visited:
