@@ -3,6 +3,7 @@ class Solution:
         nums_len = len(nums)
         total, start, end, curr = 0, 0, 0, float('inf')
         
+        # O(n) solution
         while end < nums_len:
           total += nums[end]
           while total >= target:
