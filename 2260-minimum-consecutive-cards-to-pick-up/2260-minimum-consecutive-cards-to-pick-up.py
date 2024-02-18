@@ -7,7 +7,7 @@ class Solution:
             ans = min(ans, end - start + 1)
             h.remove(cards[start])
             start += 1
-
+            
           if cards[end] not in h:
             h.add(cards[end])
           end += 1
