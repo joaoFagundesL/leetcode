@@ -8,8 +8,7 @@ class Solution:
             h.remove(cards[start])
             start += 1
             
-          if cards[end] not in h:
-            h.add(cards[end])
+          h.add(cards[end])
           end += 1
   
         if ans == float('inf'): return -1
