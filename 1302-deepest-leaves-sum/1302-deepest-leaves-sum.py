@@ -8,32 +8,22 @@ class Solution:
     def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
         if root is None:
             return 0
-        
-        max_depth = self.getMaxDepth(root)
         hash_bfs = {}
         deq = collections.deque([root])
-        
-        level = 1
+        level, max_level, total = 1, 1, 0
+       
         while deq:
             deq_size = len(deq)
             for _ in range(deq_size):
                 node = deq.popleft()
+
+                if level > max_level:
+                    total, max_level = 0, level
+                total += node.val
+                
                 if node.left:
                     deq.append(node.left)
                 if node.right:
-                    deq.append(node.right)
-                    
-                if level in hash_bfs:
-                    hash_bfs[level].append(node.val)
-                else:
-                    hash_bfs[level] = [node.val]
-               
+                    deq.append(node.right)          
             level += 1
-           
-        return sum(hash_bfs[max_depth])
-        
-    
-    def getMaxDepth(self, root: Optional[TreeNode]) -> int:
-        if root is None:
-            return 0
-        return 1 + max(self.getMaxDepth(root.left), self.getMaxDepth(root.right))
+        return total
