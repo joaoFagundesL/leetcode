@@ -45,7 +45,7 @@ class Solution:
                     
                     # Here it means that when i remove the value from the hash it may happen that 
                     # i no longer satisfy the condition. I might have reduced the window and now there's a lack
-                    # of characters that I need to find the substring
+                    # of characters that I need in order to find the substring
                     if window_characters_mapping[left_value] < required_characters[left_value]:
                         count -= 1
                         
