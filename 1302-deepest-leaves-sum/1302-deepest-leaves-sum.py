@@ -16,7 +16,8 @@ class Solution:
             deq_size = len(deq)
             for _ in range(deq_size):
                 node = deq.popleft()
-
+                # checking if i found a new max level, in this case the sum i had so far does not
+                # matter anymore. that's why i reset it to 0
                 if level > max_level:
                     total, max_level = 0, level
                 total += node.val
