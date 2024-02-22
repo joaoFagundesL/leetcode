@@ -27,4 +27,4 @@ class Solution:
 # HO->R = 2
 # HO->"" = 2
 
-# Since HOR->R R == R i dont need to do anything, so the case now is HO->R that is equal to 2
+# Since HOR->R R == R i dont need to do anything, so the case now is HO->"" that is equal to 2
