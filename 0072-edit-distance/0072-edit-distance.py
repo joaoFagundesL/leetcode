@@ -25,6 +25,6 @@ class Solution:
 # And if i fill the other positions i now that:
 # HOR->''= 3
 # HO->R = 2
-# HO->"" = 2
+# HO->"" = 2 (THATS MY CASE NOW BECAUSE R == R)
 
 # Since HOR->R R == R i dont need to do anything, so the case now is HO->"" that is equal to 2
