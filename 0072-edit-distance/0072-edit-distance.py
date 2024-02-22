@@ -13,3 +13,18 @@ class Solution:
                 else:
                     dp[i][j] = 1 + min(dp[i - 1][j], dp[i - 1][j - 1], dp[i][j - 1])
         return dp[-1][-1]
+    
+    
+    # ""  H   O  R   S   E
+# ""  0   1   2  3   4   5
+# R   1          X
+# O   2
+# S   3
+
+# X => R == R in this case i want to transform HOR->R
+# And if i fill the other positions i now that:
+# HOR->''= 3
+# HO->R = 2
+# HO->"" = 2
+
+# Since HOR->R R == R i dont need to do anything, so the case now is HO->R that is equal to 2
