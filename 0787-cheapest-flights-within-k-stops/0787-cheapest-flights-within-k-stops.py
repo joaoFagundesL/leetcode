@@ -4,12 +4,8 @@ class Solution:
 
         for flight in flights:
             v1, v2, w = flight
-            if v1 not in adj:
-                adj[v1] = []
             adj[v1].append((v2, w))
-
-            if v2 not in adj:
-                adj[v2] = []
+                
         heap = [(0, src, 0)]
         stops = [float('inf')] * n
         stops[src] = 0
@@ -22,7 +18,6 @@ class Solution:
                 return curr_weight
             if curr_stops >= k:
                 continue
-            print(curr_node)
             for next_node, next_weight in adj[curr_node]:
                 total_weight = curr_weight + next_weight
                 total_stops = curr_stops + 1
