@@ -10,7 +10,6 @@ class Solution:
                 freq[i] = 1
             else:
                 freq[h[w]] += 1
-        print(h, freq)
         
         count = 0
         for i, a in enumerate(freq):
