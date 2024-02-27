@@ -1,18 +1,11 @@
 class Solution:
     def mergeTrees(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
-        if not root1 and not root2:
-            return None
+        if not root1 and not root2: return None
 
-        if root1 and root2:
-            root3 = TreeNode(root1.val + root2.val)
-            root3.left = self.mergeTrees(root1.left, root2.left)
-            root3.right = self.mergeTrees(root1.right, root2.right)
-        elif root1:
-            root3 = TreeNode(root1.val)
-            root3.left = self.mergeTrees(root1.left, None)
-            root3.right = self.mergeTrees(root1.right, None)
-        elif root2:
-            root3 = TreeNode(root2.val)
-            root3.left = self.mergeTrees(None, root2.left)
-            root3.right = self.mergeTrees(None, root2.right)
+        v1 = root1.val if root1 else 0
+        v2 = root2.val if root2 else 0
+        root3 = TreeNode(v1 + v2)
+ 
+        root3.left = self.mergeTrees(root1.left if root1 else None, root2.left if root2 else None)
+        root3.right = self.mergeTrees(root1.right if root1 else None, root2.right if root2 else None)
         return root3
