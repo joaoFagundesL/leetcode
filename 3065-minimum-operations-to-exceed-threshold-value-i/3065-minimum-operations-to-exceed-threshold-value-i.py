@@ -7,9 +7,10 @@ class Solution:
             heapq.heappush(heap, e)
         
         ans = 0
-        for i in range(n):
+        for _ in range(n):
             if heap[0] < k:
                 heapq.heappop(heap)
                 ans += 1
             else:
                 return ans
+        return ans
