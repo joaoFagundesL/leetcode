@@ -25,9 +25,9 @@ class Solution:
                         return False
                     continue
                 # setting valid groups for unvisited nodes
-                elif arr[node] == 1:
+                if arr[node] == 1:
                     arr[nei] = arr[node] & 0
-                elif arr[node] == 0:
+                else:
                     arr[nei] = arr[node] ^ 1
                 deq.append(nei)
         return True
