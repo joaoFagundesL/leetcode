@@ -20,7 +20,7 @@ class Solution:
         while deq:
             node = deq.popleft()
             for nei in adj[node]:
-                if arr[nei] != -1: # not visited
+                if arr[nei] != -1: # visited
                     if arr[nei] == arr[node]: # same group
                         return False
                     continue
