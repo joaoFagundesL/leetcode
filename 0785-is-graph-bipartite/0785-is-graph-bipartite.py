@@ -6,9 +6,10 @@ class Solution:
         
         # handling the case if not all vertex are reachable
         for i in range(n):
-            if arr[i] == -1:
-                if self.bfs(i, graph, arr) == False:
-                    return False
+            if arr[i] != -1:
+                continue
+            if self.bfs(i, graph, arr) == False:
+                return False
         return True
 
     def bfs(self, start, adj, arr) -> bool:
