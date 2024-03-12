@@ -1,8 +1,8 @@
 class Solution {
 public:
-    void backtracking(vector<vector<int>>& ans, int freq[], vector<int>& p, vector<int>& nums) {
+    void backtracking(vector<vector<int>>& ans, int freq[], vector<int>& p, vector<int>& nums, int n) {
       
-      if(p.size() == nums.size()) {
+      if(p.size() == n) {
         ans.push_back(p);
         return;
       }
@@ -13,7 +13,7 @@ public:
         
         freq[i] = 1;
         p.push_back(nums[i]);
-        backtracking(ans, freq, p, nums);
+        backtracking(ans, freq, p, nums, n);
         freq[i] = 0;
         p.pop_back();
       }
@@ -28,7 +28,7 @@ public:
       vector<vector<int>> ans;
       vector<int> p;
       
-      backtracking(ans, freq, p, nums);
+      backtracking(ans, freq, p, nums, n);
       return ans;
      }
 };
