@@ -1,6 +1,5 @@
 class Solution {
 public:
-    // O(n!)
     void backtracking(vector<vector<int>>& ans, int freq[], vector<int>& p, vector<int>& nums, int n) {
       
       if(p.size() == n) {
@@ -8,7 +7,7 @@ public:
         return;
       }
       
-      for(int i = 0; i < nums.size(); i++) {
+      for(int i = 0; i < n; i++) {
         // freq[i - 1] = 0 means that i have already used, then i can safely skip it
         // freq[i] == 1 means that vector p already has this value
         
