@@ -1,21 +1,22 @@
 class Solution {
 public:
-    void backtracking(set<vector<int>>& ans, int freq[], vector<int>& p, vector<int>& nums, int n) {
+    void backtracking(vector<vector<int>>& ans, int freq[], vector<int>& p, vector<int>& nums, int n, set<vector<int>>& hash) {
       
-      if(p.size() == n) {
-        ans.insert(p);
+      if(p.size() == n && hash.find(p) == hash.end()) {
+        ans.push_back(p);
+        hash.insert(p);
         return;
       }
       
       for(int i = 0; i < nums.size(); i++) {
-        if(freq[i] == 1)
+        if(freq[i] == 1) 
           continue;
-        
         freq[i] = 1;
         p.push_back(nums[i]);
-        backtracking(ans, freq, p, nums, n);
+        backtracking(ans, freq, p, nums, n, hash);
         freq[i] = 0;
-        p.pop_back();
+        p.pop_back(); 
+        
       }
     }
     
@@ -25,16 +26,13 @@ public:
       for(int i = 0; i < n; i++)
         freq[i] = 0;
       
-      set<vector<int>> ans;
+      vector<vector<int>> ans;
       vector<int> p;
+      set<vector<int>> hash;
       
-      backtracking(ans, freq, p, nums, n);
+      backtracking(ans, freq, p, nums, n, hash);
       
-      vector<vector<int>> a;
-      for(const auto &it : ans) {
-        a.push_back(it);
-      }
       
-      return a;
+      return ans;
      }
 };
