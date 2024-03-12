@@ -9,6 +9,11 @@ public:
       }
       
       for(int i = 0; i < nums.size(); i++) {
+        // freq[i - 1] = 0 means that i have already used, then i can safely skip it
+        // freq[i] == 1 means that vector p already has this value
+        
+        // basically: check if the curr element is equal to its previous and if
+        // one of them has already been used
         if(freq[i] == 1 || (i > 0 && nums[i] == nums[i - 1] && freq[i - 1] == 0))
           continue;
         freq[i] = 1;
