@@ -55,31 +55,16 @@ void print_v(vector<T> &v) { cout << "{ "; fora(x, v) cout << x << " "; cout << 
 class Solution {
    public:
     int lastStoneWeight(vi &stones) {
-        priority_queue<int> pq;
-        int n = sz(stones);
-        forn(i, 0, n, 1) { pq.push(stones[i]); }
+        priority_queue<int> pq(all(stones));
 
-        while (true) {
-            int m = sz(pq);
-            if(m == 1) {
-                return pq.top();
-            }else if(m <= 0) {
-                return 0;
-            }
-            
-            int x = pq.top();
-            pq.pop();
-            int y = pq.top();
-            pq.pop();
+        while (sz(pq) > 1) {
+            int y = pq.top(); pq.pop();
+            int x = pq.top(); pq.pop();
 
-            if (x > y) {
-                swap(x, y);
-            }
-
-            if (x != y) {
-                y = y - x;
-                pq.push(y);
-            }
+            if (y != x)
+                pq.push(y-x);
         }
+        
+        return sz(pq) == 0 ? 0 : pq.top();
     }
 };
