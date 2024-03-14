@@ -60,10 +60,10 @@ class Solution {
         forn(i, 0, n, 1) { pq.push(stones[i]); }
 
         while (true) {
-            int N = sz(pq);
-            if(N == 1) {
+            int m = sz(pq);
+            if(m == 1) {
                 return pq.top();
-            }else if(N <= 0) {
+            }else if(m <= 0) {
                 return 0;
             }
             
@@ -81,7 +81,5 @@ class Solution {
                 pq.push(y);
             }
         }
-
-        return 0;
     }
 };
