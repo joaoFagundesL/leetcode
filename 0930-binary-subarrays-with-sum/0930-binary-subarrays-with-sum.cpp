@@ -28,6 +28,7 @@ typedef vector<string> vs;
 typedef vector<pii> vii;
 typedef vector<vi> vvi;
 typedef map<int, int> mpii;
+typedef unordered_map<int,int>upii;
 typedef map<int, vi> mpiv;
 typedef set<int> seti;
 typedef tuple<int, int> tii;
@@ -54,7 +55,7 @@ void print_v(vector<T> &v) { cout << "{ "; fora(x,v) cout << x << " "; cout << "
 class Solution {
 public:
     int numSubarraysWithSum(vi& nums, int goal) {;
-        mpii freq;
+        upii freq;
         freq[0]=1;
         int prefix=0, ans=0;
 
