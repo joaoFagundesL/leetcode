@@ -80,7 +80,7 @@ public:
                 if(freq[s[start]] < required[s[start]])
                     --cnt;
             }
-             if(required.find(s[end])!=required.end()){
+            if(required.find(s[end])!=required.end()){
                 freq[s[end]]++;
                 if(freq[s[end]] <= required[s[end]]){
                     ++cnt;
