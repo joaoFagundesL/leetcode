@@ -29,6 +29,7 @@ typedef vector<pii> vii;
 typedef vector<vi> vvi;
 typedef map<int, int> mpii;
 typedef unordered_map<int,int>upii;
+typedef unordered_map<char,int>upci;
 typedef map<int, vi> mpiv;
 typedef set<int> seti;
 typedef tuple<int, int> tii;
@@ -55,7 +56,7 @@ void print_v(vector<T> &v) { cout << "{ "; fora(x,v) cout << x << " "; cout << "
 class Solution {
 public:
     vector<int> findAnagrams(string s, string p) {
-        upii required,freq;
+        upci required,freq;
         vi ans;
         int n=sz(s),m=sz(p),cnt=0;
     
