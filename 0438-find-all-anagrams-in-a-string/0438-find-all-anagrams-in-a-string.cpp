@@ -53,6 +53,11 @@ void dbg_out(Head H, Tail... T) { cout << ' ' << H; dbg_out(T...); }
 template <class T>
 void print_v(vector<T> &v) { cout << "{ "; fora(x,v) cout << x << " "; cout << "\b}" << endl; }
 
+template<typename KeyType, typename ValueType>
+bool contains(const KeyType& key, const unordered_map<KeyType, ValueType>& map) {
+    return map.find(key) != map.end();
+}
+
 class Solution {
 public:
     vector<int> findAnagrams(string s, string p) {
@@ -64,7 +69,7 @@ public:
             required[e]++;
         
         forn(i,0,m,1){
-            if(required.find(s[i])!=required.end()){
+            if(contains(s[i],required)){
                 freq[s[i]]++;
                 if(freq[s[i]]<=required[s[i]])
                     ++cnt;
@@ -76,12 +81,12 @@ public:
         
         int start=0,end=m;
         while(end<n){
-            if(required.find(s[start])!=required.end()) {
+            if(contains(s[start], required)) {
                 freq[s[start]]--;
                 if(freq[s[start]] < required[s[start]])
                     --cnt;
             }
-            if(required.find(s[end])!=required.end()){
+            if(contains(s[end], required)){
                 freq[s[end]]++;
                 if(freq[s[end]] <= required[s[end]]){
                     ++cnt;
