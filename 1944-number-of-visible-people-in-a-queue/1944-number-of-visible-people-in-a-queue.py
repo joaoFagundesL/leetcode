@@ -5,7 +5,8 @@ class Solution:
         
         stack = deque()
         stack.append(heights[n - 1])
-        for i in range(n-2, -1, -1):
+        n -= 2
+        for i in range(n, -1, -1):
             v = 0
             while stack and heights[i] > stack[-1]:
                 stack.pop()
@@ -16,7 +17,6 @@ class Solution:
                 
             stack.append(heights[i])
         
-
         return ans
     
             
