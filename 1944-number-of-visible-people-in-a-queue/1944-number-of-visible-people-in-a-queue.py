@@ -8,7 +8,6 @@ class Solution:
         for i in range(n-2, -1, -1):
             v = 0
             while stack and heights[i] > stack[-1]:
-                print(heights[i], stack[-1])
                 stack.pop()
                 v += 1
                 
